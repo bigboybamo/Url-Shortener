@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.urlencoded());
 const urlShortener = require('node-url-shortener');
-const port = 3001;
+const port = 3001 || process.env.PORT;
 
 app.get('/',(req,res)=>{
     res.sendfile('url.html',{root: __dirname})
